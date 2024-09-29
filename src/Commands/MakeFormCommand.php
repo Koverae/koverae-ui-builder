@@ -129,6 +129,7 @@ class MakeFormCommand extends Command
         // $viewPath = "resources/views/livewire/form/{$slug}.blade.php";
         $tag = "<livewire:form::{$slug} />";
 
+        $this->line("COMPONENT CREATED  🤙🏿");
         $this->line("CLASS: {$classPath}");
         // $this->line("VIEW: {$viewPath}");
         $this->line("TAG: {$tag}");

@@ -56,8 +56,8 @@ class KoveraeUiBuilderServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'koverae-ui-builder');
 
         // Register the main class to use with the facade
-        $this->app->singleton('koverae-ui-builder', function () {
-            return new KoveraeUiBuilder;
-        });
+        // $this->app->singleton('koverae-ui-builder', function () {
+        //     return new KoveraeUiBuilder;
+        // });
     }
 }

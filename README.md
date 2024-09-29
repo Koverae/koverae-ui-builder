@@ -24,9 +24,24 @@ php artisan vendor:publish --tag=koverae-ui-builder-config
 ```bash
 php artisan koverae:make-form <Component>
 ```
+```bash
+php artisan module:make-form <Component> <Module>
+```
+
 #### Examples
 ```bash
 php artisan koverae:make-form UserForm
+```
+```bash
+php artisan module:make-form UserForm User
+```
+
+#### Output
+```bash
+COMPONENT CREATED  🤙
+
+CLASS: App\Http\Livewire\Form\UserForm
+TAG: <livewire:form::user-form />
 ```
 
 ## Usage

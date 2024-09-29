@@ -41,6 +41,7 @@ class MakeFormCommand extends Command
     {
         parent::__construct();
         $this->files = $files;
+        $this->type = 'form';
     }
 
     /**
@@ -129,10 +130,10 @@ class MakeFormCommand extends Command
         // $viewPath = "resources/views/livewire/form/{$slug}.blade.php";
         $tag = "<livewire:form.{$slug} />";
 
-        $this->line("COMPONENT CREATED  🤙🏿");
-        $this->line("CLASS: {$classPath}");
+        $this->line("<options=bold,reverse;fg=green> COMPONENT CREATED </> 🤙🏿\n");
+        $this->line("<options=bold;fg=green>CLASS:</>{$classPath}");
         // $this->line("VIEW: {$viewPath}");
-        $this->line("TAG: {$tag}");
+        $this->line("<options=bold;fg=green>TAG:</> {$tag}");
     }
 
 }

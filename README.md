@@ -24,8 +24,10 @@ php artisan vendor:publish --tag=koverae-ui-builder-config
 ```bash
 php artisan koverae:make-form <Component>
 ```
+To make a component inside a Laravel Module
+
 ```bash
-php artisan module:make-form <Component> <Module>
+php artisan koverae:module-component <Component> --form <Module>
 ```
 
 #### Examples
@@ -33,7 +35,7 @@ php artisan module:make-form <Component> <Module>
 php artisan koverae:make-form UserForm
 ```
 ```bash
-php artisan module:make-form UserForm User
+php artisan koverae:module-component UserForm --form User
 ```
 
 #### Output

@@ -4,6 +4,7 @@ namespace Koverae\KoveraeUiBuilder;
 
 use Illuminate\Support\ServiceProvider;
 use Koverae\KoveraeUiBuilder\Commands\MakeFormCommand;
+use Koverae\KoveraeUiBuilder\Commands\ModuleMakeFormCommand;
 
 class KoveraeUiBuilderServiceProvider extends ServiceProvider
 {
@@ -43,6 +44,7 @@ class KoveraeUiBuilderServiceProvider extends ServiceProvider
             // Registering package commands.
             $this->commands([
                 MakeFormCommand::class,
+                ModuleMakeFormCommand::class,
             ]);
         }
     }

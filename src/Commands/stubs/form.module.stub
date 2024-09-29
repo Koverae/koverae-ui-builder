@@ -1,0 +1,28 @@
+<?php
+
+namespace [namespace];
+
+use Koverae\KoveraeUiBuilder\Form\SimpleForm;
+use Koverae\KoveraeUiBuilder\Form\Capsule;
+use Koverae\KoveraeUiBuilder\Form\Group;
+use Koverae\KoveraeUiBuilder\Form\Input;
+use Koverae\KoveraeUiBuilder\Form\Tabs;
+use Koverae\KoveraeUiBuilder\Form\Table;
+
+class [class] extends SimpleForm
+{
+
+    // Define validation rules
+    protected $rules = [
+        //
+    ];
+
+    //Inputs
+    public function inputs() : array
+    {
+        return [
+            //
+        ];
+    }
+
+}

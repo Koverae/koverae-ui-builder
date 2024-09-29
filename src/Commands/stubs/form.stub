@@ -2,19 +2,27 @@
 
 namespace App\Livewire\Form;
 
-use Livewire\Component;
+use Koverae\KoveraeUiBuilder\Form\SimpleForm;
+use Koverae\KoveraeUiBuilder\Form\Capsule;
+use Koverae\KoveraeUiBuilder\Form\Group;
+use Koverae\KoveraeUiBuilder\Form\Input;
+use Koverae\KoveraeUiBuilder\Form\Tabs;
+use Koverae\KoveraeUiBuilder\Form\Table;
 
-class {{componentClass}} extends Component
+class {{componentClass}} extends SimpleForm
 {
-    public function inputs(): array
+
+    // Define validation rules
+    protected $rules = [
+        //
+    ];
+
+    //Inputs
+    public function inputs() : array
     {
         return [
-            // Define form inputs here
+            //
         ];
     }
 
-    //public function render()
-    //{
-        //return view('livewire.form.{{component}}');
-    //}
 }

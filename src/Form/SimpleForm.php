@@ -22,7 +22,10 @@ abstract class SimpleForm extends Component
         return null;
     }
 
-    public abstract function inputs() : array;
+    public function inputs() : array
+    {
+        return [];
+    }
 
     public function tabs() : array{
         return [];

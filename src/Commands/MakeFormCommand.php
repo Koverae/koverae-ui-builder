@@ -5,9 +5,12 @@ namespace Koverae\KoveraeUiBuilder\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\File;
+use Koverae\KoveraeUiBuilder\Traits\ComponentParser;
 
 class MakeFormCommand extends Command
 {
+    use ComponentParser;
     /**
      * The name and signature of the console command.
      *
@@ -58,7 +61,9 @@ class MakeFormCommand extends Command
         $this->makeDirectory($path);
         $this->files->put($path, $this->getStubContent($component));
 
-        $this->info("Form component [{$component}] created successfully in App\\Livewire\\Form.");
+        // Display the class, view, and tag
+        $this->displayComponentInfo($component);
+
         return 0;
     }
 
@@ -109,6 +114,24 @@ class MakeFormCommand extends Command
     protected function getStubPath(): string
     {
         return __DIR__ . '/stubs/form.stub';
+    }
+
+    /**
+     * Display the class, view, and tag.
+     *
+     * @param string $className
+     */
+    protected function displayComponentInfo($className)
+    {
+        $slug = strtolower(preg_replace('/(?<!^)[A-Z]/', '-$0', $className));
+
+        $classPath = "App\\Http\\Livewire\\Form\\{$className}";
+        // $viewPath = "resources/views/livewire/form/{$slug}.blade.php";
+        $tag = "<livewire:form::{$slug} />";
+
+        $this->line("CLASS: {$classPath}");
+        // $this->line("VIEW: {$viewPath}");
+        $this->line("TAG: {$tag}");
     }
 
 }

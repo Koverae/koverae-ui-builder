@@ -8,10 +8,15 @@ Koverae UI Builder is a flexible and intuitive interface builder package designe
 
 ## Installation
 
-You can install the package via composer:
+To get started, require the package via Composer:
 
 ```bash
 composer require koverae/koverae-ui-builder
+```
+
+Publish the package's configuration file:
+```bash
+php artisan vendor:publish --tag=koverae-ui-builder-config
 ```
 
 ## Usage

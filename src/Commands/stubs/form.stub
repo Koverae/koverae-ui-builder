@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Livewire\Form;
+
+use Livewire\Component;
+
+class {{componentClass}} extends Component
+{
+    public function inputs(): array
+    {
+        return [
+            // Define form inputs here
+        ];
+    }
+
+    //public function render()
+    //{
+        //return view('livewire.form.{{component}}');
+    //}
+}

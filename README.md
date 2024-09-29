@@ -18,6 +18,16 @@ Publish the package's configuration file:
 ```bash
 php artisan vendor:publish --tag=koverae-ui-builder-config
 ```
+## Making Components:
+
+### Command Signature
+```bash
+php artisan koverae:make-form <Component>
+```
+### Examples
+```bash
+php artisan koverae:make-form UserForm
+```
 
 ## Usage
 

@@ -20,11 +20,11 @@ php artisan vendor:publish --tag=koverae-ui-builder-config
 ```
 ## Making Components:
 
-### Command Signature
+#### Command Signature
 ```bash
 php artisan koverae:make-form <Component>
 ```
-### Examples
+#### Examples
 ```bash
 php artisan koverae:make-form UserForm
 ```

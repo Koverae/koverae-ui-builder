@@ -54,6 +54,19 @@
             @csrf
             <!-- Sheet Card -->
             <div class="k_form_sheet position-relative">
+                <!-- Capsule -->
+                @if(count($this->capsules()) >= 1)
+                <div class="overflow-x-auto overflow-y-hidden k_horizontal_asset mb-md-3" id="k_horizontal_capsule">
+                    @foreach($this->capsules() as $capsule)
+                    <x-dynamic-component
+                        :component="$capsule->component"
+                        :value="$capsule"
+                    >
+                    </x-dynamic-component>
+                    @endforeach
+                </div>
+                @endif
+                
                 <!-- title-->
                 <div class="m-0 mb-2 row justify-content-between position-relative w-100">
                     <div class="ke_title mw-75 pe-2 ps-0">
@@ -67,7 +80,9 @@
                             @endif
                         @endforeach
                     </div>
-                    <!-- Employee Avatar -->
+    
+                    <!-- Avatar -->
+                    @if($this->has_avatar)
                     <div class="p-0 m-0 k_employee_avatar">
                         <!-- Image Uploader -->
                         @if($this->photo != null)
@@ -92,6 +107,7 @@
                         </div>
                         @error('photo') <span class="error">{{ $message }}</span> @enderror
                     </div>
+                    @endif
 
                     <!-- checkboxes -->
                     @if($this->checkboxes)

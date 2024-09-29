@@ -3,11 +3,14 @@
 namespace Koverae\KoveraeUiBuilder\Form;
 
 use Livewire\Component;
+use Livewire\Features\SupportFileUploads\WithFileUploads;
+use Koverae\KoveraeUiBuilder\Traits\Form\Button\ActionBarButton as ActionBarButtonTrait;
 
 abstract class SimpleForm extends Component
 {
-    public bool $checkboxes = false;
-    public bool $blocked = false;
+    use ActionBarButtonTrait, WithFileUploads;
+
+    public bool $checkboxes = false, $blocked = false, $has_avatar = false;
 
 
     public function render()

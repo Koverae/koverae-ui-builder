@@ -6,6 +6,7 @@ use Livewire\Component;
 
 abstract class SimpleForm extends Component
 {
+    public bool $checkboxes = false;
     public bool $blocked = false;
 
 

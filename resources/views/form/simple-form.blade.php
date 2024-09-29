@@ -5,7 +5,6 @@
         @if(count($this->actionBarButtons()) >= 1 || count($this->statusBarButtons()) >= 1)
         <div class="pb-2 mb-0 k_form_statusbar position-relative d-flex justify-content-between mb-md-2 pb-md-0">
 
-
             <!-- Status Bar -->
             @if($this->statusBarButtons())
                 <div id="status-bar" class="k_statusbar_buttons_arrow d-none d-md-flex align-items-center align-content-around ">
@@ -68,18 +67,99 @@
                             @endif
                         @endforeach
                     </div>
-                </div>
+                    <!-- Employee Avatar -->
+                    <div class="p-0 m-0 k_employee_avatar">
+                        <!-- Image Uploader -->
+                        @if($this->photo != null)
+                        <img src="{{ $this->photo->temporaryUrl() }}" alt="image" class="img img-fluid">
+                        @else
+                        <img src="{{ $this->image_path ? Storage::url('avatars/' . $this->image_path) . '?v=' . time() : asset('assets/images/default/user.png') }}" alt="image" class="img img-fluid">
+                        @endif
+                        <!-- <small class="k_button_icon">
+                            <i class="align-middle bi bi-circle text-success"></i>
+                        </small>-->
+                        <!-- Image selector -->
+                        <div class="bottom-0 select-file d-flex position-absolute justify-content-between w100">
+                            <span class="p-1 m-1 border-0 k_select_file_button btn btn-light rounded-circle" onclick="document.getElementById('photo').click();">
+                                <i class="bi bi-pencil"></i>
+                                <input type="file" wire:model.blur="photo" id="photo" style="display: none;" />
+                            </span>
+                            @if($this->photo || $this->image_path)
+                            <span class="p-1 m-1 border-0 k_select_file_button btn btn-light rounded-circle" wire:click="$cancelUpload('photo')" wire:target="$cancelUpload('photo')">
+                                <i class="bi bi-trash"></i>
+                            </span>
+                            @endif
+                        </div>
+                        @error('photo') <span class="error">{{ $message }}</span> @enderror
+                    </div>
 
-                <!-- Right Side -->
-                @foreach($this->groups() as $group)
-                    @if($group->tab == 'none' || $group->tab = null)
-                        <x-dynamic-component
-                            :component="$group->component"
-                            :value="$group"
-                        >
-                        </x-dynamic-component>
+                    <!-- checkboxes -->
+                    @if($this->checkboxes)
+                    <div class="p-0">
+                        <!-- checkbox -->
+                        <span class="d-inline-block">
+                            <div class="k-checkbox form-check">
+                                <input type="checkbox" wire:model.blur="can_be_sold" onclick="checkStatus(this)" class="cursor-pointer form-check-input" id="sale_1">
+                                <label for="sale_1" class="cursor-pointer k_form_label">{{ __('translator::components.inputs.product-checkboxes.can-be-sold') }}</label>
+                            </div>
+                        </span>
+                        <!-- checkbox -->
+                        <span class="d-inline-block">
+                            <div class="k-checkbox form-check">
+                                <input type="checkbox" wire:model.blur="can_be_purchased" onclick="checkStatus(this)" class="cursor-pointer form-check-input" id="purchase_0">
+                                <label for="purchase_0" class="cursor-pointer k_form_label">{{ __('translator::components.inputs.product-checkboxes.can-be-purchased') }}</label>
+                            </div>
+                        </span>
+
+                        <!-- checkbox -->
+                        <span class="d-inline-block d-none">
+                            <div class="k-checkbox form-check">
+                                <input type="checkbox" wire:model.blur="can_be_subscribed" onclick="checkStatus(this)" class="cursor-pointer form-check-input" id="reccuring_0">
+                                <label for="purchase_0" class="cursor-pointer k_form_label">{{ __('translator::components.inputs.product-checkboxes.can-be-subscribed') }}</label>
+                            </div>
+                        </span>
+
+                        <!-- checkbox -->
+                        <span class="d-inline-block d-none">
+                            <div class="k-checkbox form-check">
+                                <input type="checkbox" wire:model.blur="can_be_rented" onclick="checkStatus(this)" class="cursor-pointer form-check-input" id="rent_1">
+                                <label for="purchase_0" class="cursor-pointer k_form_label">{{ __('translator::components.inputs.product-checkboxes.can-be-rented') }}</label>
+                            </div>
+                        </span>
+                    </div>
                     @endif
-                @endforeach
+                </div>
+                
+                <!-- Top Form -->
+                <div class="row">
+                    <!-- Left Side -->
+                    <div class="k_inner_group col-md-6 col-lg-6">
+
+                        @foreach($this->inputs() as $input)
+                            @if($input->position == 'left' && $input->tab == 'none')
+                                <x-dynamic-component
+                                    :component="$input->component"
+                                    :value="$input"
+                                >
+                                </x-dynamic-component>
+                            @endif
+                        @endforeach
+
+                    </div>
+                    <!-- Right Side -->
+                    <div class="k_inner_group col-md-6 col-lg-6">
+
+                        @foreach($this->inputs() as $input)
+                            @if($input->position == 'right' && $input->tab == 'none')
+                                <x-dynamic-component
+                                    :component="$input->component"
+                                    :value="$input"
+                                >
+                                </x-dynamic-component>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
 
                 @if($this->tabs())
                 <div class="k_notebokk_headers">

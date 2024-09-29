@@ -1,10 +1,10 @@
-# Very short description of the package
+# Koverae UI Builder
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/koverae/koverae-ui-builder.svg?style=flat-square)](https://packagist.org/packages/koverae/koverae-ui-builder)
 [![Total Downloads](https://img.shields.io/packagist/dt/koverae/koverae-ui-builder.svg?style=flat-square)](https://packagist.org/packages/koverae/koverae-ui-builder)
 ![GitHub Actions](https://github.com/koverae/koverae-ui-builder/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Koverae UI Builder is a flexible and intuitive interface builder package designed specifically for Laravel. Built with the power of Koverae’s ecosystem in mind, it allows developers to easily create, customize, and manage UI components like navigation bars, forms, buttons, and more—without the hassle of manual coding.
 
 ## Installation
 

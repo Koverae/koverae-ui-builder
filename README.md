@@ -38,13 +38,13 @@ php artisan module:make-form UserForm User
 
 #### Output
 ```bash
-COMPONENT CREATED  🤙
+COMPONENT CREATED  🤙🏿
 
 CLASS: App/Livewire/Form/UserForm
 TAG: <livewire:form.user-form />
 ```
 ```bash
-MODULE COMPONENT CREATED  🤙
+MODULE COMPONENT CREATED  🤙🏿
 
 CLASS: Modules/User/Livewire/Form/UserForm
 TAG: <livewire:user::form.user-form />

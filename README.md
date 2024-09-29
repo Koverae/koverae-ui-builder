@@ -55,7 +55,7 @@ Please review [our security policy](https://github.com/Koverae/koverae-ui-builde
 
 ## Credits
 
--   [Arden BOUET](https://github.com/koverae)
+-   [Arden BOUET](https://github.com/arden28)
 -   [All Contributors](../../contributors)
 
 ## License

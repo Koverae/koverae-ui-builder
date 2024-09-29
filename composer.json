@@ -10,7 +10,7 @@
         "ui-builder"
     ],
     "homepage": "https://github.com/koverae/koverae-ui-builder",
-    "license": "GNU AGPLv",
+    "license": "MIT",
     "type": "library",
     "authors": [
         {

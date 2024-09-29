@@ -51,9 +51,14 @@ TAG: <livewire:user::form.user-form />
 ```
 
 ## Usage
+To use a component, simply place its tag wherever you want it to appear:
+```bash
+<!-- Component (Form) -->
+<livewire:form.user-form />
 
-```php
-// Usage description here
+<!--  Module Component (Form) -->
+TAG: <livewire:user::form.user-form />
+
 ```
 
 ### Testing

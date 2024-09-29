@@ -61,13 +61,13 @@ TAG: <livewire:user::form.user-form />
 
 ```
 
-### Testing
+## Testing
 
 ```bash
 composer test
 ```
 
-### Changelog
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
@@ -75,7 +75,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-### Security
+## Security
 
 Please review [our security policy](https://github.com/Koverae/koverae-ui-builder/security) on how to report security vulnerabilities.
 
@@ -88,6 +88,3 @@ Please review [our security policy](https://github.com/Koverae/koverae-ui-builde
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).

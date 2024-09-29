@@ -125,9 +125,9 @@ class MakeFormCommand extends Command
     {
         $slug = strtolower(preg_replace('/(?<!^)[A-Z]/', '-$0', $className));
 
-        $classPath = "App\\Http\\Livewire\\Form\\{$className}";
+        $classPath = "App\\Livewire\\Form\\{$className}";
         // $viewPath = "resources/views/livewire/form/{$slug}.blade.php";
-        $tag = "<livewire:form::{$slug} />";
+        $tag = "<livewire:form.{$slug} />";
 
         $this->line("COMPONENT CREATED  🤙🏿");
         $this->line("CLASS: {$classPath}");

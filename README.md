@@ -51,7 +51,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
-If you discover any security related issues, please email techie@developer.koverae.com instead of using the issue tracker.
+Please review [our security policy](https://github.com/Koverae/koverae-ui-builder/security) on how to report security vulnerabilities.
 
 ## Credits
 

@@ -86,7 +86,7 @@ Please review [our security policy](https://github.com/Koverae/koverae-ui-builde
 
 ## License
 
-The GNU AGPLv. Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 ## Laravel Package Boilerplate
 

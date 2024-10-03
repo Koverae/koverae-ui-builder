@@ -18,38 +18,52 @@ Publish the package's configuration file:
 ```bash
 php artisan vendor:publish --tag=koverae-ui-builder-config
 ```
-## Making Components:
-
-#### Command Signature
+## Macking Components:
+### Command Signature
 ```bash
 php artisan koverae:make-form <Component>
 ```
-To make a component inside a Laravel Module
-
-```bash
-php artisan koverae:module-component <Component> --form <Module>
-```
-
-#### Examples
+### Examples
 ```bash
 php artisan koverae:make-form UserForm
+php artisan koverae:make-table UserTable
 ```
-```bash
-php artisan koverae:module-component UserForm --form User
-```
-
-#### Output
+### Output
 ```bash
 COMPONENT CREATED  🤙🏿
 
 CLASS: App/Livewire/Form/UserForm
 TAG: <livewire:form.user-form />
+
+CLASS: App/Livewire/Table/UserTable
+TAG: <livewire:table.user-table />
 ```
+
+## Making Components (Nwidart Module):
+To make a component inside a [Laravel Module](https://github.com/nWidart/laravel-modules) 
+#### Command Signature
+Currently the package only supports the following types of components: Form and Table.
+```bash
+php artisan koverae:module-component <Component> --type=form <Module>
+
+php artisan koverae:module-component <Component> --type=table <Module>
+```
+
+#### Examples
+```bash
+php artisan koverae:module-component UserForm --type=form User
+php artisan koverae:module-component UserTable --type=table User
+```
+
+#### Output
 ```bash
 MODULE COMPONENT CREATED  🤙🏿
 
 CLASS: Modules/User/Livewire/Form/UserForm
 TAG: <livewire:user::form.user-form />
+
+CLASS: Modules/User/Livewire/Table/UserTable
+TAG: <livewire:user::table.user-table />
 ```
 
 ## Usage
@@ -59,7 +73,7 @@ To use a component, simply place its tag wherever you want it to appear:
 <livewire:form.user-form />
 
 <!--  Module Component (Form) -->
-TAG: <livewire:user::form.user-form />
+<livewire:user::form.user-form />
 
 ```
 

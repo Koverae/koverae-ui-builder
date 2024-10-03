@@ -67,12 +67,10 @@ trait ComponentParser{
         $moduleLivewireNamespace = $this->getModuleLivewireNamespace();
 
         // Determine the type of component: form, table, map, ...
-        if($this->isForm()){
-            $typePath = ucfirst('form');
-        }
+        $type = ucfirst($this->getTypeInfo());
 
         $classDir = (string) Str::of($modulePath)
-            ->append('/'.$moduleLivewireNamespace.'/'.$typePath)
+            ->append('/'.$moduleLivewireNamespace.'/'.$type)
             ->replace(['\\'], '/');
 
         $classPath = $this->directories->implode('/');
@@ -81,7 +79,7 @@ trait ComponentParser{
 
         $className = $this->directories->last();
 
-        $componentTag = $this->getComponentTag($typePath);
+        $componentTag = $this->getComponentTag($type);
 
         return (object) [
             'dir' => $classDir,
@@ -130,7 +128,10 @@ trait ComponentParser{
             $stubDir = File::isDirectory($customStubDir) ? $customStubDir : $stubDir;
         }
 
-        $classStubName = 'form.module.stub';
+        // Determine the type of component: form, table, map, ...
+        $type = $this->getTypeInfo();
+
+        $classStubName = $type.'.'.'module.stub';
 
         $classStub = File::exists($stubDir.$classStubName)
             ? $stubDir.$classStubName

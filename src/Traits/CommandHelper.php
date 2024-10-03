@@ -22,9 +22,29 @@ trait CommandHelper
         return $this->option('inline') === true;
     }
 
-    protected function isForm()
+    protected function isType()
     {
-        return $this->option('form') === true;
+        // Get the type of component
+        $type = $this->option('type');
+        
+        // Ensure a valid component type is passed (optional validation)
+        $validTypes = ['table', 'form', 'navbar', 'cart', 'modal', 'map'];
+        if ($type && !in_array($type, $validTypes)) {
+            $this->error("Invalid component type '{$type}'. Valid types are: " . implode(', ', $validTypes));
+            return false;
+        }
+    }
+
+
+    protected function getTypeInfo()
+    {
+        $type = null;
+        // Get the type of component
+        if($this->option('type')){
+            $type = $this->option('type');
+        }
+
+        return $type;
     }
 
     protected function ensureDirectoryExists($path)
@@ -106,12 +126,13 @@ trait CommandHelper
     protected function getNamespace($classPath)
     {
         $classPath = Str::contains($classPath, '/') ? '/'.$classPath : '';
-        if($this->isForm()){
-            $typePath = ucfirst('form');
-        }
+        
+        // Determine the type of component: form, table, map, ...
+        $type = ucfirst($this->getTypeInfo());
+
         $prefix = $this->isCustomModule()
-            ? $this->getModuleNamespace().'\\'.$this->getModuleLivewireNamespace().'\\'.$typePath
-            : $this->getModuleNamespace().'\\'.$this->module->getName().'\\'.$this->getModuleLivewireNamespace().'\\'.$typePath;
+            ? $this->getModuleNamespace().'\\'.$this->getModuleLivewireNamespace().'\\'.$type
+            : $this->getModuleNamespace().'\\'.$this->module->getName().'\\'.$this->getModuleLivewireNamespace().'\\'.$type;
 
         return (string) Str::of($classPath)
             ->beforeLast('/')

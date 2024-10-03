@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Koverae\KoveraeUiBuilder\Commands\MakeCartCommand;
 use Koverae\KoveraeUiBuilder\Commands\MakeFormCommand;
 use Koverae\KoveraeUiBuilder\Commands\MakeTableCommand;
-use Koverae\KoveraeUiBuilder\Commands\ModuleMakeFormCommand;
+use Koverae\KoveraeUiBuilder\Commands\ModuleMakeCommand;
 use Koverae\KoveraeUiBuilder\Commands\PackageInstallMessageCommand;
 
 class KoveraeUiBuilderServiceProvider extends ServiceProvider
@@ -47,7 +47,7 @@ class KoveraeUiBuilderServiceProvider extends ServiceProvider
             // Registering package commands.
             $this->commands([
                 MakeFormCommand::class,
-                ModuleMakeFormCommand::class,
+                ModuleMakeCommand::class,
                 MakeTableCommand::class,
                 MakeCartCommand::class,
                 PackageInstallMessageCommand::class,

@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Koverae\KoveraeUiBuilder\Traits\ComponentParser;
 
-class ModuleMakeFormCommand extends Command
+class ModuleMakeCommand extends Command
 {
     use ComponentParser;
 
@@ -47,7 +47,7 @@ class ModuleMakeFormCommand extends Command
         }
 
         // Ensure a valid component type is passed (optional validation)['table', 'form', 'navbar', 'cart', 'modal', 'map']
-        $validTypes = ['table', 'form'];
+        $validTypes = ['table', 'form', 'cart'];
         if ($type && !in_array($type, $validTypes)) {
             $this->error("Invalid component type '{$type}'. Valid types are: " . implode(', ', $validTypes));
             return false;

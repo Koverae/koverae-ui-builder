@@ -32,11 +32,13 @@ php artisan vendor:publish --tag=koverae-ui-builder-config
 ```bash
 php artisan koverae:make-form <Component>
 php artisan koverae:make-table <Component>
+php artisan koverae:make-cart <Component>
 ```
 ### Examples
 ```bash
 php artisan koverae:make-form UserForm
 php artisan koverae:make-table UserTable
+php artisan koverae:make-cart UserCart
 ```
 ### Output
 ```bash
@@ -47,6 +49,9 @@ TAG: <livewire:form.user-form />
 
 CLASS: App/Livewire/Table/UserTable
 TAG: <livewire:table.user-table />
+
+CLASS: App/Livewire/Cart/UserCart
+TAG: <livewire:cart.user-cart />
 ```
 
 ## Making Components (Nwidart Module):
@@ -55,14 +60,15 @@ To make a component inside a [Laravel Module](https://github.com/nWidart/laravel
 Currently the package only supports the following types of components: Form and Table.
 ```bash
 php artisan koverae:module-component <Component> --type=form <Module>
-
 php artisan koverae:module-component <Component> --type=table <Module>
+php artisan koverae:module-component <Component> --type=cart <Module>
 ```
 
 #### Examples
 ```bash
 php artisan koverae:module-component UserForm --type=form User
 php artisan koverae:module-component UserTable --type=table User
+php artisan koverae:module-component UserCart --type=table User
 ```
 
 #### Output
@@ -74,6 +80,9 @@ TAG: <livewire:user::form.user-form />
 
 CLASS: Modules/User/Livewire/Table/UserTable
 TAG: <livewire:user::table.user-table />
+
+CLASS: Modules/User/Livewire/Cart/UserCart
+TAG: <livewire:user::cart.user-cart />
 ```
 
 ## Usage

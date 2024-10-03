@@ -46,8 +46,8 @@ class ModuleMakeFormCommand extends Command
             return false;
         }
 
-        // Ensure a valid component type is passed (optional validation)
-        $validTypes = ['table', 'form', 'navbar', 'cart', 'modal', 'map'];
+        // Ensure a valid component type is passed (optional validation)['table', 'form', 'navbar', 'cart', 'modal', 'map']
+        $validTypes = ['table', 'form'];
         if ($type && !in_array($type, $validTypes)) {
             $this->error("Invalid component type '{$type}'. Valid types are: " . implode(', ', $validTypes));
             return false;

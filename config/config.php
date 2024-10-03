@@ -28,6 +28,7 @@ return [
 
     'components' => [
         'form' => Koverae\KoveraeUiBuilder\Form\SimpleForm::class,
+        'table' => Koverae\KoveraeUiBuilder\Table\Table::class,
     ],
 
 ];

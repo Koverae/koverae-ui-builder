@@ -114,7 +114,10 @@ trait ComponentParser{
 
     protected function getStubInfo()
     {
-        $defaultStubDir = __DIR__.'/../Commands/stubs/';
+        // Determine the type of component: form, table, map, ...
+        $type = $this->getTypeInfo();
+
+        $defaultStubDir = __DIR__.'/../Commands/stubs/'. $type. '/';
 
         $stubDir = File::isDirectory($publishedStubDir = base_path('stubs/koverae-ui-builder/'))
             ? $publishedStubDir
@@ -128,8 +131,6 @@ trait ComponentParser{
             $stubDir = File::isDirectory($customStubDir) ? $customStubDir : $stubDir;
         }
 
-        // Determine the type of component: form, table, map, ...
-        $type = $this->getTypeInfo();
 
         $classStubName = $type.'.'.'module.stub';
 

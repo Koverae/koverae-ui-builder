@@ -1,0 +1,45 @@
+<?php
+
+namespace [namespace];
+
+
+use Koverae\KoveraeUiBuilder\Table\Table;
+use Koverae\KoveraeUiBuilder\Table\Column;
+use Illuminate\Database\Eloquent\Builder;
+use App\Models\User; // Default model, feel free to customize according to your needs 🤙🏿
+
+class [class] extends Table
+{
+
+    public function createRoute() : string
+    {
+        return '';
+    }
+
+    public function showRoute($id) : string
+    {
+        return '';
+    }
+
+    public function emptyTitle() : string
+    {
+        return '';
+    }
+
+    public function emptyText() : string
+    {
+        return '';
+    }
+    public function query() : Builder
+    {
+        return User::query(); // Returns a Builder instance for querying the User model
+    }
+
+    public function columns() : array
+    {
+        return [
+            //
+        ];
+    }
+
+}

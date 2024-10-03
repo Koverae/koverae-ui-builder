@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Filesystem\Filesystem;
 use Koverae\KoveraeUiBuilder\Traits\ComponentParser;
 
-class MakeFormCommand extends Command
+class MakeTableCommand extends Command
 {
     use ComponentParser;
     /**
@@ -15,14 +15,14 @@ class MakeFormCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'koverae:make-form {component}';
+    protected $signature = 'koverae:make-table {component}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new form component for Koverae UI Builder.';
+    protected $description = 'Create a new table component for Koverae UI Builder.';
 
     /**
      * Filesystem instance to handle file generation.
@@ -74,7 +74,7 @@ class MakeFormCommand extends Command
      */
     protected function getPath(string $component): string
     {
-        return app_path("Livewire/Form/{$component}.php");
+        return app_path("Livewire/Table/{$component}.php");
     }
 
     /**
@@ -112,7 +112,7 @@ class MakeFormCommand extends Command
      */
     protected function getStubPath(): string
     {
-        return __DIR__ . '/stubs/form/form.stub';
+        return __DIR__ . '/stubs/table/table.stub';
     }
 
     /**
@@ -124,9 +124,8 @@ class MakeFormCommand extends Command
     {
         $slug = strtolower(preg_replace('/(?<!^)[A-Z]/', '-$0', $className));
 
-        $classPath = "App/Livewire/Form/{$className}";
-        // $viewPath = "resources/views/livewire/form/{$slug}.blade.php";
-        $tag = "<livewire:form.{$slug} />";
+        $classPath = "App/Livewire/Table/{$className}";
+        $tag = "<livewire:table.{$slug} />";
 
         $this->line("<options=bold,reverse;fg=green> COMPONENT CREATED </> 🤙🏿\n");
         $this->line("<options=bold;fg=green>CLASS:</> {$classPath}");

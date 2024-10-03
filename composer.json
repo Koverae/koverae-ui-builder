@@ -42,7 +42,13 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "post-install-cmd": [
+            "@php artisan package:message"
+        ],
+        "post-update-cmd": [
+            "@php artisan package:message"
+        ]
 
     },
     "config": {

@@ -14,6 +14,15 @@ To get started, require the package via Composer:
 composer require koverae/koverae-ui-builder
 ```
 
+The package will automatically register a service provider and alias.
+
+Optionally, publish the package's configuration file by running:
+
+```bash
+composer require koverae/koverae-ui-builder --provider"Koverae\KoveraeUiBuilder\KoveraeUiBuilderServiceProvider::class"
+```
+
+
 Publish the package's configuration file:
 ```bash
 php artisan vendor:publish --tag=koverae-ui-builder-config

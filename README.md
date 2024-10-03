@@ -57,7 +57,7 @@ TAG: <livewire:cart.user-cart />
 ## Making Components (Nwidart Module):
 To make a component inside a [Laravel Module](https://github.com/nWidart/laravel-modules) User 
 #### Command Signature
-Currently the package only supports the following types of components: Form and Table.
+Currently the package only supports the following types of components: Form, Table and Cart.
 ```bash
 php artisan koverae:module-component <Component> --type=form <Module>
 php artisan koverae:module-component <Component> --type=table <Module>

@@ -31,6 +31,7 @@ php artisan vendor:publish --tag=koverae-ui-builder-config
 ### Command Signature
 ```bash
 php artisan koverae:make-form <Component>
+php artisan koverae:make-table <Component>
 ```
 ### Examples
 ```bash
@@ -49,7 +50,7 @@ TAG: <livewire:table.user-table />
 ```
 
 ## Making Components (Nwidart Module):
-To make a component inside a [Laravel Module](https://github.com/nWidart/laravel-modules) 
+To make a component inside a [Laravel Module](https://github.com/nWidart/laravel-modules) User 
 #### Command Signature
 Currently the package only supports the following types of components: Form and Table.
 ```bash

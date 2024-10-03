@@ -1,0 +1,18 @@
+<?php
+
+namespace [namespace];
+
+
+use Koverae\KoveraeUiBuilder\Cart\SimpleCart;
+use Koverae\KoveraeUiBuilder\Cart\Column;
+
+class [class] extends SimpleCart
+{
+    public function columns() : array
+    {
+        return [
+            //
+        ];
+    }
+
+}

@@ -3,9 +3,11 @@
 namespace Koverae\KoveraeUiBuilder;
 
 use Illuminate\Support\ServiceProvider;
+use Koverae\KoveraeUiBuilder\Commands\MakeCartCommand;
 use Koverae\KoveraeUiBuilder\Commands\MakeFormCommand;
 use Koverae\KoveraeUiBuilder\Commands\MakeTableCommand;
 use Koverae\KoveraeUiBuilder\Commands\ModuleMakeFormCommand;
+use Koverae\KoveraeUiBuilder\Commands\PackageInstallMessageCommand;
 
 class KoveraeUiBuilderServiceProvider extends ServiceProvider
 {
@@ -28,9 +30,9 @@ class KoveraeUiBuilderServiceProvider extends ServiceProvider
             ], 'config');
 
             // Publishing the views.
-            $this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/koverae-ui-builder'),
-            ], 'views');
+            // $this->publishes([
+            //     __DIR__.'/../resources/views' => resource_path('views/vendor/koverae-ui-builder'),
+            // ], 'views');
 
             // Publishing assets.
             /*$this->publishes([
@@ -47,6 +49,8 @@ class KoveraeUiBuilderServiceProvider extends ServiceProvider
                 MakeFormCommand::class,
                 ModuleMakeFormCommand::class,
                 MakeTableCommand::class,
+                MakeCartCommand::class,
+                PackageInstallMessageCommand::class,
             ]);
         }
     }

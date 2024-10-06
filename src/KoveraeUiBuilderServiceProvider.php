@@ -4,6 +4,7 @@ namespace Koverae\KoveraeUiBuilder;
 
 use Illuminate\Support\ServiceProvider;
 use Koverae\KoveraeUiBuilder\Commands\MakeCartCommand;
+use Koverae\KoveraeUiBuilder\Commands\MakeControlPanelCommand;
 use Koverae\KoveraeUiBuilder\Commands\MakeFormCommand;
 use Koverae\KoveraeUiBuilder\Commands\MakeTableCommand;
 use Koverae\KoveraeUiBuilder\Commands\ModuleMakeCommand;
@@ -46,6 +47,7 @@ class KoveraeUiBuilderServiceProvider extends ServiceProvider
 
             // Registering package commands.
             $this->commands([
+                MakeControlPanelCommand::class,
                 MakeFormCommand::class,
                 ModuleMakeCommand::class,
                 MakeTableCommand::class,

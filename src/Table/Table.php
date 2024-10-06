@@ -12,18 +12,18 @@ abstract class Table extends Component
     use WithPagination;
 
     public $view_type = 'lists';
-    public $view = 'app::livewire.components.table.table';
+    public $view = 'koverae-ui-builder::table.table';
     public $components = [
         'lists' => [
-            'view' => 'app::livewire.components.table.table',
+            'view' => 'koverae-ui-builder::table.table',
             'component' => 'table-lists',
         ],
         'kanban' => [
-            'view' => 'app::livewire.components.table.template.kanban',
+            'view' => 'koverae-ui-builder::table.template.kanban',
             'component' => 'kanban',
         ],
         'map' => [
-            'view' => 'app::livewire.components.table.template.map',
+            'view' => 'koverae-ui-builder::table.template.map',
             'component' => 'map',
         ],
     ];
@@ -43,7 +43,7 @@ abstract class Table extends Component
 
     public function render()
     {
-        return view($this->component);
+        return view($this->view);
     }
 
     public function emptyTitle() : string{

@@ -5,12 +5,28 @@ namespace Koverae\KoveraeUiBuilder\Table;
 use Livewire\Component;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\WithPagination;
+use Livewire\Attributes\On;
 
 abstract class Table extends Component
 {
     use WithPagination;
 
-    public $view = 'lists';
+    public $view_type = 'lists';
+    public $view = 'app::livewire.components.table.table';
+    public $components = [
+        'lists' => [
+            'view' => 'app::livewire.components.table.table',
+            'component' => 'table-lists',
+        ],
+        'kanban' => [
+            'view' => 'app::livewire.components.table.template.kanban',
+            'component' => 'kanban',
+        ],
+        'map' => [
+            'view' => 'app::livewire.components.table.template.map',
+            'component' => 'map',
+        ],
+    ];
 
     public $perPage = 50;
 
@@ -98,6 +114,20 @@ abstract class Table extends Component
       {
           // Empty the $ids array
           $this->ids = [];
+      }
+
+      #[On('switch-view')]
+      public function switchView($view)
+      {
+          $this->view_type = $view;
+          // Check if the component type exists in the components array
+          if(array_key_exists($view, $this->components)){
+            // Set the view from the components array
+            $this->view = $this->components[$view]['view'];
+          }else{
+            // Handle the case when the component type doesn't exist
+            abort(404, 'Component not found.');
+          }
       }
 
 

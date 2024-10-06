@@ -1,0 +1,29 @@
+<?php
+
+namespace [namespace];
+
+use Koverae\KoveraeUiBuilder\Navbar\ControlPanel;
+use Koverae\KoveraeUiBuilder\Navbar\SwitchButton;
+
+class [class] extends ControlPanel
+{
+
+    public function mount()
+    {
+        $this->generateBreadcrumbs();
+        $this->showBreadcrumbs = true;
+        $this->currentPage = __('Lists');
+    }
+
+
+    public function switchButtons() : array
+    {
+        return  [
+            // make($key, $label)
+            SwitchButton::make('lists',"switchView('lists')", "bi-list-task"),
+            SwitchButton::make('kanban',"switchView('kanban')", "bi-kanban"),
+            SwitchButton::make('map',"switchView('kanban')", "bi-map"),
+            // SwitchButton::make('delivery_lead_time',"Delais de livraison", ''),
+        ];
+    }
+}

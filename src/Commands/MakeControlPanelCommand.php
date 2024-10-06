@@ -112,7 +112,7 @@ class MakeControlPanelCommand extends Command
      */
     protected function getStubPath(): string
     {
-        return __DIR__ . '/stubs/navbar/control-panel/control-panel.stub';
+        return __DIR__ . '/stubs/panel/control-panel.stub';
     }
 
     /**

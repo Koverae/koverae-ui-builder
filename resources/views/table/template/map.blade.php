@@ -1,4 +1,4 @@
 <div>
     <!-- Map -->
-    Map
+    Map View
 </div>

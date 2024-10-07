@@ -28,7 +28,7 @@ abstract class Table extends Component
         ],
     ];
 
-    public $perPage = 50;
+    public $perPage = 60;
 
     public $page = 1;
 
@@ -65,6 +65,10 @@ abstract class Table extends Component
     public abstract function query() : Builder;
 
     public abstract function columns() : array;
+
+    public function cards() : array{
+        return [];
+    }
 
     public function showRoute($id) : string{
         return '';

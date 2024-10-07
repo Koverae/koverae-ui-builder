@@ -5,11 +5,17 @@ namespace [namespace];
 
 use Koverae\KoveraeUiBuilder\Table\Table;
 use Koverae\KoveraeUiBuilder\Table\Column;
+use Koverae\KoveraeUiBuilder\Table\Card;
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\User; // Default model, feel free to customize according to your needs 🤙🏿
 
 class [class] extends Table
 {
+    public array $data = [];
+
+    public function mount(){
+        $this->data = ['email', 'phone'];
+    }
 
     public function createRoute() : string
     {
@@ -35,10 +41,20 @@ class [class] extends Table
         return User::query(); // Returns a Builder instance for querying the User model
     }
 
+    // List View
     public function columns() : array
     {
         return [
-            //
+            Column::make('name', __('Name')),
+            Column::make('email', __('Email')),
+        ];
+    }
+
+    // Kanban View
+    public function cards() : array
+    {
+        return [
+            Card::make('name', "name", "", $this->data),
         ];
     }
 

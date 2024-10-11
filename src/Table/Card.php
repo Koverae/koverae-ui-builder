@@ -14,7 +14,7 @@ class Card
     public string $title;
 
     public $model;
-    
+
     public array $data = [];
 
     public function __construct($key, $title, $model = null, $data = [])

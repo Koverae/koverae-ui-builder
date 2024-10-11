@@ -11,6 +11,9 @@ abstract class Table extends Component
 {
     use WithPagination;
 
+    public $latitude = 51.505;
+    public $longitude = -0.09;
+
     public $view_type = 'lists';
     public $view = 'koverae-ui-builder::table.table';
     public $components = [
@@ -37,7 +40,7 @@ abstract class Table extends Component
     public $sortDirection = 'asc';
 
     public $ids = [];
-    
+
     public $component = 'koverae-ui-builder::table.table';
 
 
@@ -132,6 +135,15 @@ abstract class Table extends Component
             // Handle the case when the component type doesn't exist
             abort(404, 'Component not found.');
           }
+      }
+
+      public function updateMap($lat, $lng)
+      {
+          $this->latitude = $lat;
+          $this->longitude = $lng;
+
+          // You can trigger an event to update the map on the frontend
+          $this->dispatchBrowserEvent('map-updated', ['lat' => $lat, 'lng' => $lng]);
       }
 
 

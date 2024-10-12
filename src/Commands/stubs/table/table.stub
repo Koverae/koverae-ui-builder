@@ -13,6 +13,7 @@ class {{componentClass}} extends Table
     public array $data = [];
 
     public function mount(){
+        $this->headerText = "Users";
         $this->data = ['email', 'phone'];
     }
 

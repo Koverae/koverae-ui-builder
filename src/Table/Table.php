@@ -43,6 +43,7 @@ abstract class Table extends Component
 
     public $component = 'koverae-ui-builder::table.table';
 
+    public $headerText = "Users";
 
     public function render()
     {
